@@ -2,11 +2,11 @@
 var readLineSync = require('readline-sync');
 
 function numberOfVowelInString() {
-    var string = readLineSync.question("Enter the string:");
-    string = string.toLowerCase();
-    var Array = string.split("");
-    const countVowels = Array.filter(element => 'aeiou'.includes(element)).length;
-    console.log("Number of Vowels in " + string + " are " + countVowels);
+    var characters = readLineSync.question("Enter the string:");
+    characters = characters.toLowerCase();
+    var data = characters.split("");
+    const countVowels = data.filter(element => 'aeiou'.includes(element)).length;
+    console.log("Number of Vowels in " + characters + " are " + countVowels);
 
 }
 numberOfVowelInString();
