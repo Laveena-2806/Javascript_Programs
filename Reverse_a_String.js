@@ -1,4 +1,4 @@
-// program to remove the duplicate characters from string
+// program to reverse the string
 var readLineSync = require('readline-sync');
 
 function reverseString() {
