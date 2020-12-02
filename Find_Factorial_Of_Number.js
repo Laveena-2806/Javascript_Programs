@@ -4,10 +4,10 @@ var readLineSync = require('readline-sync');
 
 function factorialOfNumber() {
     let number = readLineSync.question("Enter the number to find factorial of:");
-    let result = 1;
+    let factorial = 1;
     for (let i = 1; i <= number; i++) {
-        result *= i;
+        factorial *= i;
     }
-    console.log("The factorial of " + number + " is:" + result);
+    console.log("The factorial of " + number + " is:" + factorial);
 }
 factorialOfNumber();
