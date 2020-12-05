@@ -15,3 +15,4 @@ function missingLetters() {
     console.log("All the letters are present.")
 }
 missingLetters();
+
