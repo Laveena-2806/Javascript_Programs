@@ -1,4 +1,5 @@
 // program to find the missing letters in entered word.
+// ("abce") should return "d"
 var readLineSync = require('readline-sync');
 
 function missingLetters() {
