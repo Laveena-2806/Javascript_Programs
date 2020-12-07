@@ -20,6 +20,6 @@ var readLineSync = require("readline-sync");
         }
     }
     console.log(`The sum of ${num} prime numbers is:${sum}.`);
-    // returns 17 - the correct answer. 
+  
 })
 ();
