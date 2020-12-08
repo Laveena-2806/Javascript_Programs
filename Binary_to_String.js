@@ -6,7 +6,7 @@ const binaryToString = () => {
     let newBinary = binaryForm.split(" ");
     let convertedToString = [];
 
-    for (i = 0; i < newBinary.length; i++) {
+    for (let i = 0; i < newBinary.length; i++) {
         convertedToString.push(String.fromCharCode(parseInt(newBinary[i], 2)));
     }
     let newString = convertedToString.join("");
