@@ -10,41 +10,37 @@ var readLineSync = require('readline-sync');
         limitOfKeys = parseInt(limitOfKeys);
         let obj = {};
         for (let j = 0; j < limitOfKeys; j++) {
-            var keyOfObj = readLineSync.question("Enter the key of Object:");
-            var valuesOfObj = readLineSync.question("Enter the value of key of object:");
-            obj.key = keyOfObj;
-            obj.value = valuesOfObj;
-            collection.push(obj);
-            console.log(obj);
+            let keyOfObj = readLineSync.question("Enter the key of Object:");
+            let valuesOfObj = readLineSync.question("Enter the value of key of object:");
+            obj[keyOfObj] = valuesOfObj;
         }
+        collection.push(obj);
 
     }
-    console.log(collection);
-    let key = readLineSync.question("Enter the Key of object:");
-    let value = readLineSync.question("Enter the value of that key:");
-    source.key = key;
-    source.value = value;
-    var collectionKeys = [];
-    for (var i = 0; i < collection.length; i++) {
+    let key = readLineSync.question("Enter the Key of object that you want to fiter:");
+    let value = readLineSync.question("Enter the value of that key you want to filter:");
+    source[key] = value;
+    let collectionKeys = [];
+    for (let i = 0; i < collection.length; i++) {
         collectionKeys.push(Object.keys(collection[i]));
     }
-    var sourceKeys = Object.keys(source);
-    console.log(sourceKeys);
+    let sourceKeys = Object.keys(source);
 
-    for (var t = 0; t < collectionKeys.length; t++) {
-        for (var x = 0; x < collectionKeys[t].length; x++) {
-            for (var y = 0; y < sourceKeys.length; y++) {
-                if (sourceKeys[y] == collectionKeys[t][x]) {
-                    if (collection[t][collectionKeys[t][x]] == source[sourceKeys[y]]) {
-                        console.log(collection[t].key + " " + collection[t].value);
-                    } else {
-                        console.log("value not found");
-                    }
-                } else {
-                    console.log("key not found");
-                }
+    let result = collection.filter(function(obj) {
+        for (let i = 0; i < sourceKeys.length; i++) {
+            if (!obj.hasOwnProperty(sourceKeys[i]) ||
+                obj[sourceKeys[i]] !== source[sourceKeys[i]]
+            ) {
+                return false;
             }
         }
-    }
+    });
+    console.log("The array of objects entered is:");
+    console.log(collection);
+    console.log("The Key value pair to filter is:")
+    console.log(source);
+    console.log("The array of object after filtering is:");
+    console.log(result);
+
 })
 ()
