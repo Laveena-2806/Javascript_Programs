@@ -2,27 +2,27 @@
 var readLineSync = require('readline-sync');
 (function everythingBeTrueInCollection() {
     let arr = [];
-    let keys = [];
-    let values = [];
     let limitOfArray = readLineSync.question("Enter the limit of array:");
     limitOfArray = parseInt(limitOfArray);
     for (let i = 0; i < limitOfArray; i++) {
         let limitOfKeys = readLineSync.question("Enter the limit of keys of object:");
         limitOfKeys = parseInt(limitOfKeys);
+        let obj = {};
         for (var j = 0; j < limitOfKeys; j++) {
-            let keyOfObj = readLineSync.question("Enter the key of Object:");
-            let valuesOfObj = readLineSync.question("Enter the value of key of object:");
-            keys.push(keyOfObj);
-            values.push(valuesOfObj);
+            var keyOfObj = readLineSync.question("Enter the key of Object:");
+            keyOfObj.toLowerCase();
+            var valuesOfObj = readLineSync.question("Enter the value of key of object:");
+            keyOfObj.toLowerCase();
+            obj[keyOfObj] = valuesOfObj;
         }
+        arr.push(obj);
 
-        function obj(keys, values) {
-            this.keys = keys;
-            this.values = values;
-        }
-
-        arr.push(new obj(keys[j], values[j]));
     }
+    let predicate = readLineSync.question("Enter the key You need to compare in object:");
+    let result = arr.every(obj => obj[predicate]);
+    console.log("The array of objects entered is:");
     console.log(arr);
+    console.log(`The value Predicate for which you want to check true or false:${predicate}.`);
+    console.log(`The result is:${result}.`);
 })
-();
+()
