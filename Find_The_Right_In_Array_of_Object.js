@@ -34,6 +34,7 @@ var readLineSync = require('readline-sync');
                 return false;
             }
         }
+        return true;
     });
     console.log("The array of objects entered is:");
     console.log(collection);
@@ -41,6 +42,5 @@ var readLineSync = require('readline-sync');
     console.log(source);
     console.log("The array of object after filtering is:");
     console.log(result);
-
 })
 ()
