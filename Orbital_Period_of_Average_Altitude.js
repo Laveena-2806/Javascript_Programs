@@ -15,7 +15,6 @@ var readLineSync = require('readline-sync');
             if (!isNaN(valuesOfObj)) {
                 valuesOfObj = parseInt(valuesOfObj);
             }
-            keyOfObj.toLowerCase();
             obj[keyOfObj] = valuesOfObj;
         }
         arr.push(obj);
