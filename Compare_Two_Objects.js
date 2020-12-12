@@ -18,7 +18,7 @@ var readLineSync = require('readline-sync');
             secondObject[keyOfObject2] = valueOfObject2;
         }
         let keys1 = Object.keys(firstObject);
-        let keys2 = Object.keys(secondObject););
+        let keys2 = Object.keys(secondObject);
     for (i = 0; i < keys1.length; i++) {
         if (keys1[i] === keys2[i]) {
             console.log("The object:");
